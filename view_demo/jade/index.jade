@@ -1,0 +1,13 @@
+extends layout
+
+block scripts
+	script(src='public/javascripts/angular.min.js')
+	script(src='lib/angular-slider.js')
+	//- script(src='dist/angular-lightbox.js')
+	
+block content
+	h1= title
+	div(sl-cell-root ng-controller="ctrl")
+		div(sl-cell slider-imgs="sliderImages")
+		p {{test}}
+	script(src='public/javascripts/demo.js')

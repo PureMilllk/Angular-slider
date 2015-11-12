@@ -4,18 +4,19 @@
   },
   "devDependencies": {
     "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-qunit": "~0.5.2",
+    "grunt-contrib-coffee": "^0.13.0",
     "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-uglify": "~0.5.0"
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-qunit": "~0.5.2",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1"
   },
   "name": "angular-slider",
   "version": "1.0.0",
   "description": "angular slider",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,14 @@
   "bugs": {
     "url": "https://github.com/PureMilllk/Angular-slider/issues"
   },
-  "homepage": "https://github.com/PureMilllk/Angular-slider#readme"
+  "homepage": "https://github.com/PureMilllk/Angular-slider#readme",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  }
 }
