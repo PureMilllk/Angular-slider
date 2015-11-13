@@ -7,7 +7,11 @@ block scripts
 	
 block content
 	h1= title
+	br
 	div(sl-cell-root ng-controller="ctrl")
-		div(sl-cell slider-imgs="sliderImages")
-		p {{test}}
+		ul(sl-cell-wrapper)
+			div(sl-cell slider-imgs="sliderImages")
+	br
+	btn(sl-btn="prev") prev
+	btn(sl-btn="next") next
 	script(src='public/javascripts/demo.js')

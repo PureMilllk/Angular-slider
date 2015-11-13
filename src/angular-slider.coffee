@@ -2,7 +2,9 @@
 
 this.angular.module "angularSlider", []
 	# inner wrapper
-	.directive "slUl", [
+	.service "slClickHelper", () ->
+		return 
+	.directive "slCellWrapper", [
 		() ->
 			link = (scope, element, attrs) ->
 				element.css
@@ -20,16 +22,9 @@ this.angular.module "angularSlider", []
 					height: "235px"
 					width: "600px"
 					overflow: "hidden"
+					margin: "0 auto"
 				return
-			template = '
-				<div>
-					<ul sl-ul ng-transclude>
-					</ul>
-				</div>
-			'
 			link: link
-			template: template
-			transclude: true
 			replace: true
 	]
 	# cell
@@ -39,20 +34,6 @@ this.angular.module "angularSlider", []
 				element.css
 					height: "235px"
 					float:"left"
-				return
-			link: link
-	]
-	.directive "slBtn", [
-		() ->
-			link = (scope, element, attrs) ->
-				element.css
-					padding: "9px"
-					color: "white"
-					fontSize: "15px"
-					boxShadow: "none"
-					background: "#01E833"
-					border: "1px solid #01E833"
-					borderRadius: "8px"
 				return
 			link: link
 	]
@@ -76,4 +57,32 @@ this.angular.module "angularSlider", []
 			template: template
 			replace: replace
 			scope: scope
+	]
+	.directive "slBtn", [
+		"slClickHelper"
+		"$window"
+		(slClickHelper, $window) ->
+			link = (scope, element, attrs) ->
+				element.css
+					padding: "6px 15px 9px 15px"
+					color: "white"
+					fontSize: "15px"
+					boxShadow: "none"
+					background: "#01E833"
+					border: "1px solid #01E833"
+					borderRadius: "8px"
+					margin: "5px"
+					cursor: "pointer"
+				if attrs.slBtn is "prev"
+					element.on "click",(e) ->
+						e.preventDefault()
+						console.log e
+						return
+				else if attrs.slBtn is "next"
+					element.on "click",(e) ->
+						e.preventDefault()
+						console.log e
+						return
+				return
+			link: link
 	]

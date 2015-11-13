@@ -13,5 +13,5 @@ app.controller('ctrl', ['$scope', function($scope){
 			src: "public/images/3.jpg"
 		}
 	];
-	$scope.test = 'this is a test'
+	
 }]);
